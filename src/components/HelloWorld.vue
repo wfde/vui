@@ -1,6 +1,7 @@
 <template>
     <div class="hello">
-        <h1>{{ msg }} {{num}}</h1>
+        <h1>{{ msg }} </h1>
+        <p>{{ str }}</p>
     </div>
 </template>
 
@@ -9,15 +10,16 @@
 
     @Component
     export default class HelloWorld extends Vue {
-        num = 4;
+        str = '';
+        name = 'hwg';
         @Prop() private msg!: string;
 
         created() {
-            this.calculation(6);
+            this.sayHello(this.name);
         }
 
-        calculation(num: number) {
-            this.num = num * 4;
+        sayHello(name: string) {
+            this.str = '您好,' + name;
         }
     }
 </script>
