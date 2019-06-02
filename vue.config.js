@@ -46,7 +46,7 @@ module.exports = {
     //将选项传递给与CSS相关的加载器
     css: {
         modules: false,
-        //extract: true,
+        //extract: true, //设为true的话热更新会出问题
         sourceMap: false,
         loaderOptions: {
             css: {
