@@ -1,6 +1,5 @@
 {
   "defaultSeverity": "warning",
-
   // 推荐的规则
   "extends": [
     "tslint:recommended"
@@ -10,26 +9,25 @@
       "node_modules/**"
     ]
   },
-
   "rules": {
-
     //禁用 console
     "no-console": false,
-
     // 禁止自动检测末尾行必须使用逗号，always总是检测，never从不检测，ignore忽略检测
-    "trailing-comma": [true, {
-      "singleline": "never",
-      "multiline": {
-        "objects": "ignore",
-        "arrays": "ignore",
-        "functions": "never",
-        "typeLiterals": "ignore"
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": {
+          "objects": "ignore",
+          "arrays": "ignore",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        }
       }
-    }],
-
+    ],
     //检查对象文字中键的排序。
     //使用默认的字母顺序时，可以使用其他空行将对象属性组合在一起，同时按字母顺序保持每个组中的元素。
-    "object-literal-sort-keys":false,
+    "object-literal-sort-keys": false,
     // 禁止给类的构造函数的参数添加修饰符
     "no-parameter-properties": false,
     // 禁止使用 debugger
@@ -129,7 +127,6 @@
     "radix": true,
     // 必须使用 isNaN(foo) 而不是 foo === NaN
     "use-isnan": true,
-
     // 可维护性
     // 这些规则可以增加代码的可维护性
     // 禁止函数的循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity
@@ -213,6 +210,5 @@
     // 禁止 finally 内出现 return, continue, break, throw 等
     // finally 会比 catch 先执行
     "no-unsafe-finally": true
-
   }
 }
