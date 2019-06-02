@@ -8,9 +8,10 @@
       "node_modules/**"
     ]
   },
+
   "rules": {
     // 禁止自动检测末尾行必须使用逗号，always总是检测，never从不检测，ignore忽略检测
-    "trailing-comma": [true, {
+    "trailing-comma": [false, {
       "singleline": "never",
       "multiline": {
         "objects": "ignore",
@@ -19,7 +20,7 @@
         "typeLiterals": "ignore"
       }
     }],
-
+    "object-literal-sort-keys":false,
     // 禁止给类的构造函数的参数添加修饰符
     "no-parameter-properties": false,
     // 禁止使用 debugger
@@ -29,7 +30,7 @@
     // 禁止无用的表达式
     "no-unused-expression": true,
     // 定义过的变量必须使用
-    "no-unused-variable": true,
+    "no-unused-variable": false,
     // 变量必须先定义后使用
     "no-use-before-declare": true,
     // 禁止使用 var
