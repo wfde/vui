@@ -11,11 +11,11 @@
 
   "rules": {
     // 禁止自动检测末尾行必须使用逗号，always总是检测，never从不检测，ignore忽略检测
-    "trailing-comma": [false, {
+    "trailing-comma": [true, {
       "singleline": "never",
       "multiline": {
         "objects": "ignore",
-        "arrays": "always",
+        "arrays": "ignore",
         "functions": "never",
         "typeLiterals": "ignore"
       }
