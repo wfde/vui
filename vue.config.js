@@ -46,7 +46,7 @@ module.exports = {
     //将选项传递给与CSS相关的加载器
     css: {
         modules: false,
-        extract: true,
+        //extract: true,
         sourceMap: false,
         loaderOptions: {
             css: {
