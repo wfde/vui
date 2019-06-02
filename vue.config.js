@@ -1,9 +1,12 @@
+const path = require('path');
+
+function resolve(dir) {
+    return path.join(__dirname, dir)
+}
+
 module.exports = {
 
-    // 默认情况下，Vue CLI 会假设你的应用是被部署在一个域名的根路径上
-    // baseUrl: process.env.NODE_ENV === "production" ? "./" : "/",
-
-    // 把开发服务器架设在根路径
+    // 把开发服务器假设在根路径
     publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
 
     // 生成文件的目录名称
@@ -23,29 +26,29 @@ module.exports = {
     // 一个指定了 entry, template, filename, title 和 chunks 的对象 (除了 entry 之外都是可选的)；
     // 或一个指定其 entry 的字符串。
     // 具体情况看官网 https://cli.vuejs.org/zh/config/#pages
-    pages: {
-        index: {
-            // page 的入口
-            entry: 'src/main.ts',
-            // 模板来源
-            template: 'public/index.html',
-            // 在 dist/index.html 的输出
-            filename: 'index.html',
-            title: 'Vui库',
-            // 提取出来的通用 chunk 和 vendor chunk。
-            chunks: ['chunk-vendors', 'chunk-common', 'index']
-        }
-    },
+    // pages: {
+    //     index: {
+    //         // page 的入口
+    //         entry: 'src/main.ts',
+    //         // 模板来源
+    //         template: 'public/index.html',
+    //         // 在 dist/index.html 的输出
+    //         filename: 'index.html',
+    //         title: 'Vui库',
+    //         // 提取出来的通用 chunk 和 vendor chunk。
+    //         chunks: ['chunk-vendors', 'chunk-common', 'index']
+    //     }
+    // },
 
     //默认情况下，只有以文件结尾的文件*.module.[ext]才会被视为CSS模块。将此设置为true允许您.module放入文件名并将所有*.(css|scss|sass|less|styl(us)?)文件视为CSS模块。
     //extract true在生产中，false在开发中,是否将组件中的CSS提取到独立的CSS文件中（而不是在JavaScript中内联并动态注入,在开发模式下禁用提取CSS，因为它与CSS热重新加载不兼容
     //sourceMap是否为CSS启用源映射。将此设置为true可能会影响构建性能
     //将选项传递给与CSS相关的加载器
-    css:{
-        modules:false,
-        extract:true,
-        sourceMap:false,
-        loaderOptions:{
+    css: {
+        modules: false,
+        extract: true,
+        sourceMap: false,
+        loaderOptions: {
             css: {
                 // options here will be passed to css-loader
             },
@@ -70,7 +73,87 @@ module.exports = {
         }
     },
 
+    configureWebpack: {
+        // provide the app's title in webpack's name field, so that
+        // it can be accessed in index.html to inject the correct title.
+        name: '基于Vue的前端ui库',
+        resolve: {
+            alias: {
+                '@': resolve('src')
+            }
+        }
+    },
+
     chainWebpack: config => {
+
+        // set svg-sprite-loader
+        config.module
+            .rule('svg')
+            .exclude.add(resolve('src/icons'))
+            .end();
+
+        config.module
+            .rule('icons')
+            .test(/\.svg$/)
+            .include.add(resolve('src/icons'))
+            .end()
+            .use('svg-sprite-loader')
+            .loader('svg-sprite-loader')
+            .options({
+                symbolId: 'icon-[name]'
+            })
+            .end();
+
+        // set preserveWhitespace
+        config.module
+            .rule('vue')
+            .use('vue-loader')
+            .loader('vue-loader')
+            .tap(options => {
+                options.compilerOptions.preserveWhitespace = true
+                return options
+            })
+            .end();
+
+        config
+        // https://webpack.js.org/configuration/devtool/#development
+            .when(process.env.NODE_ENV === 'development',
+                config => config.devtool('cheap-source-map')
+            );
+
+        config
+            .when(process.env.NODE_ENV !== 'development',
+                config => {
+                    config
+                        .plugin('ScriptExtHtmlWebpackPlugin')
+                        .after('html')
+                        .use('script-ext-html-webpack-plugin', [{
+                            // `runtime` must same as runtimeChunk name. default is `runtime`
+                            inline: /runtime\..*\.js$/
+                        }])
+                        .end();
+                    config
+                        .optimization.splitChunks({
+                        chunks: 'all',
+                        cacheGroups: {
+                            libs: {
+                                name: 'chunk-libs',
+                                test: /[\\/]node_modules[\\/]/,
+                                priority: 10,
+                                chunks: 'initial' // only package third parties that are initially dependent
+                            },
+                            commons: {
+                                name: 'chunk-commons',
+                                test: resolve('src/components'), // can customize your rules
+                                minChunks: 3, //  minimum common number
+                                priority: 5,
+                                reuseExistingChunk: true
+                            }
+                        }
+                    });
+                    config.optimization.runtimeChunk('single')
+                }
+            );
 
         //在单独的进程中，运行打字类型检查器的web pack插件
         config.plugin('fork-ts-checker').tap(([options]) => {

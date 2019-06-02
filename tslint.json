@@ -1,5 +1,7 @@
 {
   "defaultSeverity": "warning",
+
+  // 推荐的规则
   "extends": [
     "tslint:recommended"
   ],
@@ -20,6 +22,9 @@
         "typeLiterals": "ignore"
       }
     }],
+
+    //检查对象文字中键的排序。
+    //使用默认的字母顺序时，可以使用其他空行将对象属性组合在一起，同时按字母顺序保持每个组中的元素。
     "object-literal-sort-keys":false,
     // 禁止给类的构造函数的参数添加修饰符
     "no-parameter-properties": false,
@@ -120,11 +125,9 @@
     "radix": true,
     // 必须使用 isNaN(foo) 而不是 foo === NaN
     "use-isnan": true,
-    //
-    //
+
     // 可维护性
     // 这些规则可以增加代码的可维护性
-    //
     // 禁止函数的循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity
     "cyclomatic-complexity": [
       true,
@@ -138,6 +141,8 @@
       "spaces",
       4
     ],
+    //import名称排序要求按照字母从小到大排序
+    "ordered-imports": false,
     // 禁止出现重复的 import
     "no-duplicate-imports": true,
     // 禁止一个文件中出现多个相同的 namespace
