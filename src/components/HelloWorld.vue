@@ -9,14 +9,14 @@
 
     @Component
     export default class HelloWorld extends Vue {
-        private num = 4;
+        num = 4;
         @Prop() private msg!: string;
 
-        private created() {
+        created() {
             this.calculation(6);
         }
 
-        private calculation(num: number) {
+        calculation(num: number) {
             this.num = num * 4;
         }
     }
