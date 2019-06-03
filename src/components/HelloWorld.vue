@@ -11,7 +11,7 @@
     @Component
     export default class HelloWorld extends Vue {
         str = '';
-        name = 'hwg';git
+        name = 'hwg';
         @Prop() private msg!: string;
 
         created() {
