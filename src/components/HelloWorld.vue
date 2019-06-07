@@ -10,6 +10,7 @@
     @Component
     export default class HelloWorld extends Vue {
         @Prop() private msg!: string;
+
     }
 </script>
 

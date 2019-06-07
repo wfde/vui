@@ -78,6 +78,7 @@ module.exports = {
         // it can be accessed in index.html to inject the correct title.
         name: '基于Vue的前端ui库',
         resolve: {
+            extensions: ['.js', '.vue', '.json','.ts','.tsx'],
             alias: {
                 '@': resolve('src')
             }
