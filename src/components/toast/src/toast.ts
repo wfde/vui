@@ -9,7 +9,12 @@ let getAnInstance = function () {
     });
 };
 
-let Toast = function (option: any) {
+interface Option {
+    message: string;
+    position: string;
+}
+
+let Toast = function (option: Option) {
 
     let instance = getAnInstance();
 
