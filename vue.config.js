@@ -63,7 +63,8 @@ module.exports = {
     runtimeCompiler: false,
 
     // 通过设置让浏览器 overlay 同时显示警告和错误 在 devServe 配置项中  ==>  overlay: {warnings: true,errors: true}
-    lintOnSave: 'error',
+    lintOnSave: false,
+    // lintOnSave: 'error',
 
     devServer: {
         // quiet: true,
@@ -78,7 +79,7 @@ module.exports = {
         // it can be accessed in index.html to inject the correct title.
         name: '基于Vue的前端ui库',
         resolve: {
-            extensions: ['.js', '.vue', '.json','.ts','.tsx'],
+            extensions: ['.js', '.ts', '.tsx', '.json'],
             alias: {
                 '@': resolve('src')
             }
@@ -116,6 +117,14 @@ module.exports = {
             })
             .end();
 
+        // config.module
+        //     .rule('ts')
+        //     .use('ts-loader')
+        //     .tap(options => {
+        //         return { ...options,
+        //             'transpileOnly': false
+        //         }
+        //     });
         config
         // https://webpack.js.org/configuration/devtool/#development
             .when(process.env.NODE_ENV === 'development',

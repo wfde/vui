@@ -6,13 +6,18 @@
 </template>
 
 <script>
-    // @ is an alias to /src
     import HelloWorld from '@/components/HelloWorld.vue';
 
     export default {
         name: 'home',
         components: {
             HelloWorld
+        },
+        created() {
+            this.$toast({
+                message: '测试成功',
+                position: 'middle'
+            });
         }
     };
 </script>

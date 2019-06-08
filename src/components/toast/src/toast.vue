@@ -40,49 +40,29 @@
 
    @Component
    export default class Toast extends Vue {
-
+       name: string = 'toast';
        @Prop(String)
-       message: string;
+       message: string | undefined;
 
        @Prop({
            type: String,
            default: 'middle'
        })
-       position: string;
+       position: string | undefined;
 
        @Prop({
            type: Boolean,
            default: true
        })
-       visible:boolean;
+       visible: boolean | undefined;
 
        customClass(){
-           var classes = [];
+           const classes = [];
            if (this.position) {
-               classes.push('toast-'+this.position);
+               classes.push('toast-' + this.position);
            }
        }
 
    }
-//   export default {
-//        name:'toast',
-//        props:{
-//            message: {
-//              type: String
-//            },
-//            position: {
-//              type: String,
-//              default: 'middle'
-//            },
-//            visible: {
-//              type: Boolean,
-//              default: true
-//            }
-//        },
-//
-//
-//    }
-
-
 
 </script>
