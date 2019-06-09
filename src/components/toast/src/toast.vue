@@ -26,9 +26,7 @@
 
         // 页面加载完
         mounted() {
-            this.$nextTick(() => {
-                this.startTimer();
-            });
+            this.startTimer();
         }
 
         // 关闭提示
@@ -66,7 +64,6 @@
     .toast {
         position: fixed;
         padding: 10px;
-        top: 10%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -84,7 +81,7 @@
         }
 
         &.toast-middle {
-            top: 40%;
+            top: 50%;
         }
 
         &.toast-bottom {

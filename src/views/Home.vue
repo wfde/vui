@@ -15,8 +15,7 @@
         },
         created() {
             this.$toast({
-                message: '测试成功',
-                position: 'middle'
+                message: '测试成功'
             });
         }
     };
