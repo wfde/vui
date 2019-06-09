@@ -10,9 +10,10 @@ interface GetAnInstanceFun {
 }
 
 // 定义组件传参类型
-interface Option {
+interface ToastOption {
     message: string;
-    position: string;
+    position?: string;
+    duration?: number;
 }
 
 const ToastInstance = Vue.extend(toast);
@@ -22,22 +23,26 @@ const getAnInstance = (): GetAnInstanceFun => {
     });
 };
 
-const Toast = (option: Option) => {
+let instance: any;
 
-    const instance = getAnInstance();
+const Toast = (option: ToastOption) => {
+
+    instance = getAnInstance();
     instance.message = option.message;
-    instance.position = option.position;
+    instance.position = option.position as string;
+    instance.duration = option.duration as number || 1500;
     instance.visible = true;
+    instance.closed = () => {
+        Toast.close();
+    };
     document.body.appendChild(instance.$el);
+    return instance;
 
-    // 在下次 DOM 更新循环结束之后执行延迟回调。在修改数据之后立即使用这个方法，获取更新后的 DOM。
-    Vue.nextTick(() => {
-        setTimeout(() => {
-            instance.visible = false;
-            document.body.removeChild(instance.$el);
-        }, 1500);
-    });
+};
 
+// 关闭Toast
+Toast.close = () => {
+    document.body.removeChild(instance.$el);
 };
 
 export default Toast;
