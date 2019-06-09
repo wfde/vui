@@ -28,10 +28,9 @@
     })
     export default class Home extends Vue {
         routes: number[] | undefined;
-        $toast: any;
 
         created() {
-            this.routes = (this.$router as any).options.routes;
+            this.routes = this.$router.options.routes;
             this.$toast({
                 message: '测试成功'
             });
