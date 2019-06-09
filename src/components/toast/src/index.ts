@@ -12,10 +12,10 @@ interface ToastOption {
 
 let instance: any;
 
-const Toast = (option: ToastOption) => {
+const Toast = (options: ToastOption) => {
 
     instance = new ToastInstance({
-        data: option
+        data: options
     });
 
     // instance.id = 'toast';
