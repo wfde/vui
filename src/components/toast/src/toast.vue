@@ -65,17 +65,17 @@
         position: fixed;
         padding: 10px;
         left: 50%;
+        z-index: 99999;
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        -webkit-transition: opacity .3s linear;
+        transition: opacity .3s linear;
         border-radius: 5px;
         background: rgba(0, 0, 0, .7);
         color: #fff;
         box-sizing: border-box;
         text-align: center;
-        z-index: 99999;
-        -webkit-transition: opacity .3s linear;
-        transition: opacity .3s linear;
-
+        font-size: 14px;
         &.toast-top {
             top: 10%;
         }
