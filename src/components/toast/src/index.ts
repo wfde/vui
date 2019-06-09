@@ -14,7 +14,6 @@ let instance: any;
 
 const Toast = (option: ToastOption) => {
 
-    // instance = getAnInstance();
     instance = new ToastInstance({
         data: option
     });
