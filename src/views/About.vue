@@ -10,9 +10,8 @@
   @Component
   export default class Home extends Vue {
     routes: number[] | undefined;
-
     created() {
-      this.routes = this.$router.options.routes;
+      this.routes =  (this.$router as any).options.routes;
       console.log(this.routes);
     }
 
