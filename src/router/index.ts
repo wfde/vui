@@ -14,10 +14,10 @@ export default new Router({
             meta: {title: '首页'}
         },
         {
-            path: '/about',
-            name: 'about',
-            component: () => import('@/views/about.vue'),
-            meta: {title: '关于我们'}
+            path: '/toast',
+            name: 'toast',
+            component: () => import('@/views/components/toast.vue'),
+            meta: {title: '提示框'}
 
         }
     ]

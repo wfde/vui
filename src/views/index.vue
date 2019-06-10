@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-    import HelloWorld from './components/HelloWorld.vue';
+    import HelloWorld from './HelloWorld.vue';
     import {Component, Vue} from 'vue-property-decorator';
 
     @Component({
@@ -30,9 +30,7 @@
         routes: number[] | undefined;
         created() {
             this.routes = (this.$router as any).options.routes;
-            this.$toast({
-                message: '测试成功'
-            });
+
         }
 
     }
