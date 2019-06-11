@@ -32,12 +32,14 @@
         // 关闭提示
         close() {
             this.closed();
+
         }
 
         // 倒计时
         startTimer() {
             this.timer = setTimeout(() => {
                 this.visible = false;
+                document.body.removeChild(this.$el);
                 this.close();
             }, this.duration);
         }

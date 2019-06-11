@@ -11,7 +11,7 @@ interface ToastOption {
 }
 
 let instance: any;
-let instanceArr: number[] = [];
+let instanceArr: any = [];
 let num: number = 1;
 const Toast = (options: ToastOption) => {
 
@@ -32,16 +32,8 @@ const Toast = (options: ToastOption) => {
 };
 
 // 关闭Toast
-Toast.close = (id) => {
-    for(let i = 0; i <= instanceArr.length; i++ ){
-        if(id == instanceArr[i].id){
-            instance[i].visible = false;
-            document.body.removeChild(instance[i].$el);
-        }
-    }
+Toast.close = (id: any) => {
     // instance.visible = false;
-    console.log(instance, 'instance');
-    // document.body.removeChild(instance.$el);
 };
 
 export default Toast;
