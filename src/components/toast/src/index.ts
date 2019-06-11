@@ -11,28 +11,37 @@ interface ToastOption {
 }
 
 let instance: any;
-
+let instanceArr: number[] = [];
+let num: number = 1;
 const Toast = (options: ToastOption) => {
 
     instance = new ToastInstance({
         data: options
     });
 
-    // instance.id = 'toast';
+    instance.id = 'toast-' + num++;
     instance.visible = true;
     instance.closed = () => {
-        Toast.close();
+        Toast.close(instance.id);
     };
     instance.$mount();
+    instanceArr.push(instance);
     document.body.appendChild(instance.$el);
     return instance;
 
 };
 
 // 关闭Toast
-Toast.close = () => {
-    instance.visible = false;
-    document.body.removeChild(instance.$el);
+Toast.close = (id) => {
+    for(let i = 0; i <= instanceArr.length; i++ ){
+        if(id == instanceArr[i].id){
+            instance[i].visible = false;
+            document.body.removeChild(instance[i].$el);
+        }
+    }
+    // instance.visible = false;
+    console.log(instance, 'instance');
+    // document.body.removeChild(instance.$el);
 };
 
 export default Toast;
