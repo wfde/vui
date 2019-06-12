@@ -11,13 +11,11 @@ interface ToastOption {
 }
 
 let instance: any;
-let num: number = 1;
 const Toast = (options: ToastOption) => {
 
     instance = new ToastInstance({
         data: options
     });
-    instance.id = 'toast-' + num++;
     instance.visible = true;
     instance.$mount();
     document.body.appendChild(instance.$el);
