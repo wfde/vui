@@ -14,11 +14,16 @@ export default new Router({
             meta: {title: '首页'}
         },
         {
+            path: '/button',
+            name: 'button',
+            component: () => import('@/views/components/button.vue'),
+            meta: {title: '按钮'}
+        },
+        {
             path: '/toast',
             name: 'toast',
             component: () => import('@/views/components/toast.vue'),
             meta: {title: '提示框'}
-
         }
     ]
 });

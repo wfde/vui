@@ -1,0 +1,60 @@
+$defaultColor: #666;
+.btn {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: 14px;
+    line-height: 20px;
+    background: $defaultBg;
+    color: $defaultColor;
+    white-space: nowrap;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    &.btn-default{
+        @include button-define($defaultBg, 'btn');
+        color:#666;
+        &.is-border {
+            @include button-border-define($defaultBg, 'default');
+            color:#666;
+        }
+    }
+    &.btn-primary {
+        @include button-define($primaryBg, 'btn');
+        &.is-border {
+            @include button-border-define($primaryBg, 'primary');
+        }
+    }
+    &.btn-success {
+        @include button-define($successBg, 'btn');
+        &.is-border {
+            @include button-border-define($successBg, 'success');
+        }
+    }
+    &.btn-warning {
+        @include button-define($warningBg, 'btn');
+        &.is-border {
+            @include button-border-define($warningBg, 'warning');
+        }
+    }
+    &.btn-danger {
+        @include button-define($dangerBg, 'btn');
+        &.is-border {
+            @include button-border-define($dangerBg, 'danger');
+        }
+    }
+    &.btn-violet {
+        @include button-define($violetBg, 'btn');
+        &.is-border {
+            @include button-border-define($violetBg, 'violet');
+        }
+    }
+    &.btn-grey {
+        @include button-define($greyBg, 'btn');
+        &.is-border {
+            @include button-border-define($greyBg, 'grey');
+        }
+    }
+
+}
