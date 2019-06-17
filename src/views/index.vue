@@ -1,11 +1,11 @@
 <template>
     <div class="home">
         <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="基于Vue.js开发的UI库 - Vui"/>
+        <HelloWorld msg="基于Vue.js开发的UI库1 - Vui"/>
 
         <div class="sidebar">
             <ul class="sidebar-list">
-                <li class="sidebar-item" v-for="item in routes">
+                <li class="sidebar-item" v-for="(item, index) in routes" :key="index">
                     <router-link :to="{name:item.name}">
                         {{item.meta.title}}
                     </router-link>
@@ -13,8 +13,6 @@
             </ul>
         </div>
     </div>
-
-
 </template>
 
 <script lang="ts">
@@ -28,19 +26,19 @@
     })
     export default class Home extends Vue {
         routes: number[] | undefined;
+
         created() {
             this.routes = (this.$router as any).options.routes;
-
         }
 
     }
 
 </script>
 <style lang="scss" scoped>
-    .sidebar{
-        .sidebar-list{
+    .sidebar {
+        .sidebar-list {
             list-style: none;
-            .sidebar-item{
+            .sidebar-item {
                 margin-bottom: 10px;
             }
         }

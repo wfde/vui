@@ -63,7 +63,7 @@ module.exports = {
     runtimeCompiler: false,
 
     // 通过设置让浏览器 overlay 同时显示警告和错误 在 devServe 配置项中  ==>  overlay: {warnings: true,errors: true}
-    lintOnSave: false,
+    lintOnSave: true,
     // lintOnSave: 'error',
 
     devServer: {
@@ -117,14 +117,6 @@ module.exports = {
             })
             .end();
 
-        // config.module
-        //     .rule('ts')
-        //     .use('ts-loader')
-        //     .tap(options => {
-        //         return { ...options,
-        //             'transpileOnly': false
-        //         }
-        //     });
         config
         // https://webpack.js.org/configuration/devtool/#development
             .when(process.env.NODE_ENV === 'development',
