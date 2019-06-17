@@ -1,4 +1,4 @@
-# ??Vue.js???UI?git
+# 基于Vue.js开发的UI库 - Vui
 
 ## Project setup
 ```
