@@ -42,6 +42,9 @@
     ],
     "parserOptions": {
       "parser": "@typescript-eslint/parser"
+    },
+    "rules": {
+
     }
   },
   "postcss": {
