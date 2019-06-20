@@ -1,35 +1,16 @@
+/**
+ * defaultBg : 默认
+ * primaryBg : 主要
+ * successBg : 成功
+ * warningBg : 警告
+ * dangerBg  : 危险
+ * greyBg    : 信息
+ * violetBg  : 其他
+ */
 $defaultBg: #E4E4E4;
 $primaryBg: #699FE1;
 $successBg: #50BA5F;
 $warningBg: #FF9437;
-$orangeBg: #F05B48;
 $dangerBg: #EB8B79;
 $violetBg: #8089C1;
 $greyBg: #666;
-
-// 基本按钮
-@mixin button-define($background,$type) {
-    background: $background;
-    border:1px solid $background;
-    @if $type == 'btn' {
-        color:#fff;
-        &:hover {
-            background: darken($background, 5%);
-        }
-    }
-}
-
-// 边框按钮
-@mixin button-border-define($background,$type) {
-    background: none;
-    color: $background;
-    border: 1px solid $background;
-    &:hover {
-        color:#fff;
-        background: darken($background, 2%);
-        @if $type == 'default' {
-            color:#666;
-        }
-    }
-}
-

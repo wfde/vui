@@ -1,4 +1,31 @@
 $defaultColor: #666;
+
+// 基本按钮
+@mixin button-define($background,$type) {
+    background: $background;
+    border:1px solid $background;
+    @if $type == 'btn' {
+        color:#fff;
+        &:hover {
+            background: darken($background, 5%);
+        }
+    }
+}
+
+// 边框按钮
+@mixin button-border-define($background,$type) {
+    background: none;
+    color: $background;
+    border: 1px solid $background;
+    &:hover {
+        color:#fff;
+        background: darken($background, 2%);
+        @if $type == 'default' {
+            color:#666;
+        }
+    }
+}
+
 .btn {
     display: inline-block;
     padding: 6px 20px;
@@ -58,3 +85,4 @@ $defaultColor: #666;
     }
 
 }
+
