@@ -1,9 +1,9 @@
 <template>
   <div class="toast-page">
     <h1>{{this.$route.meta.title}}</h1>
-    <a href="javascript:;" @click="openToast('top')">top</a>
-    <a href="javascript:;" @click="openToast('middle')">middle</a>
-    <a href="javascript:;" @click="openToast('bottom')">bottom</a>
+    <a href="javascript:;" @click="openToast('top','提交成功')">top</a>
+    <a href="javascript:;" @click="openToast('middle','提交成功')">middle</a>
+    <a href="javascript:;" @click="openToast('bottom','提交成功')">bottom</a>
   </div>
 </template>
 
@@ -13,10 +13,10 @@
   @Component
   export default class Toast extends Vue {
 
-    openToast(name: string){
+    openToast(name: string, msg: string){
         this.$toast({
-            message: name,
-            position: name
+            position: name,
+            message: msg
         });
     }
 
