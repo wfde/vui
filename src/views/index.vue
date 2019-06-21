@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="基于Vue.js开发的UI库1 - Vui"/>
+        <HelloWorld msg="基于Vue.js开发的UI库 - Vui"/>
 
         <div class="sidebar">
             <ul class="sidebar-list">
