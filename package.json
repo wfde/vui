@@ -44,7 +44,7 @@
       "parser": "@typescript-eslint/parser"
     },
     "rules": {
-      "no-console":2
+      "no-console":"off"
     }
   },
   "postcss": {

@@ -62,11 +62,14 @@ module.exports = {
     // 具体信息看官网 https://cn.vuejs.org/v2/guide/installation.html#运行时+编译器vs.只包含运行时
     runtimeCompiler: false,
 
-    // 通过设置让浏览器 overlay 同时显示警告和错误 在 devServe 配置项中  ==>  overlay: {warnings: true,errors: true}
-    lintOnSave: true,
-    // lintOnSave: 'error',
+    // 开启eslint
+    // 设置为 true 时，eslint-loader 会将 lint 错误输出为编译警告。默认情况下，警告仅仅会被输出到命令行，且不会使得编译失败。
+    // 设置为 error 时，这会强制 eslint-loader 将 lint 错误输出为编译错误，同时也意味着 lint 错误将会导致编译失败。
+    lintOnSave: 'error',
 
+    // 通过设置让浏览器 overlay 同时显示警告和错误 在 devServe 配置项中  ==>  overlay: {warnings: true,errors: true}
     devServer: {
+        // 与devServer.quiet启用，那么除了该初始启动信息将被写入到控制台。这也意味着webpack中的错误或警告不可见。
         // quiet: true,
         overlay: {
             warnings: true,
