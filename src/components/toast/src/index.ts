@@ -11,7 +11,7 @@ interface ToastOption {
 }
 
 let instance: any;
-const Toast = (options: ToastOption) => {
+const Toast = (options: ToastOption): void => {
 
     instance = new ToastInstance({
         data: options
@@ -19,7 +19,6 @@ const Toast = (options: ToastOption) => {
     instance.visible = true;
     instance.$mount();
     document.body.appendChild(instance.$el);
-    return instance;
 
 };
 
