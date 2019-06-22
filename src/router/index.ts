@@ -24,6 +24,12 @@ export default new Router({
             name: 'toast',
             component: () => import('@/views/components/toast.vue'),
             meta: {title: '提示框'}
+        },
+        {
+            path: '/switch',
+            name: 'switch',
+            component: () => import('@/views/components/switch.vue'),
+            meta: {title: '开关'}
         }
     ]
 });

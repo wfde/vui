@@ -1,11 +1,13 @@
-import Button from '@/components/button';
-import Toast from '@/components/toast';
+import Button from './components/button';
+import Toast from './components/toast';
+import Switch from './components/switch';
 // import Loader from '@/components/loader';
 
 // 定义返回值类型
 const install = (Vue: any) => {
 
     Vue.component(Button.name, Button);
+    Vue.component(Switch.name, Switch);
     Vue.prototype.$toast = Toast;
 
 };
