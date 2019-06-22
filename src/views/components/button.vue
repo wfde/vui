@@ -9,7 +9,6 @@
             <v-button type="warning">警告</v-button>
             <v-button type="danger">危险</v-button>
             <v-button type="grey">信息</v-button>
-            <v-button type="violet">其他</v-button>
         </div>
 
         <div class="btns">
@@ -19,7 +18,6 @@
             <v-button type="warning" border>警告</v-button>
             <v-button type="danger" border>危险</v-button>
             <v-button type="grey" border>信息</v-button>
-            <v-button type="violet" border>其他</v-button>
         </div>
 
     </div>

@@ -1,16 +1,26 @@
+
+/* ---------------------
+* default : 默认
+* primary : 主要
+* success : 成功
+* warning : 警告
+* danger  : 危险
+* grey    : 信息
+--------------------- */
+
 /**
- * defaultBg : 默认
- * primaryBg : 主要
- * successBg : 成功
- * warningBg : 警告
- * dangerBg  : 危险
- * greyBg    : 信息
- * violetBg  : 其他
+ * color
  */
-$defaultBg: #E4E4E4;
-$primaryBg: #699FE1;
-$successBg: #50BA5F;
-$warningBg: #FF9437;
-$dangerBg: #EB8B79;
-$violetBg: #8089C1;
-$greyBg: #666;
+$v-color-default: #E4E4E4;
+$v-color-primary: #699FE1;
+$v-color-success: #50BA5F;
+$v-color-warning: #FF9437;
+$v-color-danger: #EB8B79;
+$v-color-grey: #666;
+
+/**
+ * font
+ */
+$v-font-size-default: 14px;
+$v-font-size-small: 12px;
+$v-font-size-large: 16px;
