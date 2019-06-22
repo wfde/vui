@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
-@import "config"; // 主题配置
-@import "common"; // 公共样式
-@import "./components/button.scss"; //按钮样式
+@import "config";
+@import "common";
+@import "./components/button.scss";
+@import "./components/toast.scss";
 
 

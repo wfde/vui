@@ -1,7 +1,7 @@
 <template>
 
     <div
-            class="toast "
+            class="v-toast"
             :class="customClass"
             v-show="visible"
             @mouseenter="clearTimer"
@@ -51,7 +51,7 @@
         get customClass() {
             const classes = [];
             if (this.position) {
-                classes.push('toast-' + this.position);
+                classes.push('v-toast-' + this.position);
             }
             return classes.join(' ');
         }
@@ -59,35 +59,3 @@
     }
 
 </script>
-
-<style lang="scss" scoped>
-    .toast {
-        position: fixed;
-        padding: 10px;
-        left: 50%;
-        z-index: 99999;
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        -webkit-transition: opacity .3s linear;
-        transition: opacity .3s linear;
-        border-radius: 5px;
-        background: rgba(0, 0, 0, .7);
-        color: #fff;
-        box-sizing: border-box;
-        text-align: center;
-        font-size: 14px;
-        &.toast-top {
-            top: 10%;
-        }
-
-        &.toast-middle {
-            top: 50%;
-        }
-
-        &.toast-bottom {
-            top: initial;
-            bottom: 5%;
-        }
-
-    }
-</style>
