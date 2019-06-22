@@ -1,7 +1,7 @@
 $v-default-color: #666;
 
 // 基本按钮
-@mixin button-define($color,$type) {
+@mixin default-button($color,$type) {
     background: $color;
     border:1px solid $color;
     @if $type == 'btn' {
@@ -13,7 +13,7 @@ $v-default-color: #666;
 }
 
 // 边框按钮
-@mixin button-border-define($color,$type) {
+@mixin border-button($color,$type) {
     background: none;
     color: $color;
     border: 1px solid $color;
@@ -40,41 +40,41 @@ $v-default-color: #666;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     &.v-btn-default{
-        @include button-define($v-color-default, 'btn');
+        @include default-button($v-color-default, 'btn');
         color:#666;
         &.is-border {
-            @include button-border-define($v-color-default, 'default');
+            @include border-button($v-color-default, 'default');
             color:#666;
         }
     }
     &.v-btn-primary {
-        @include button-define($v-color-primary, 'btn');
+        @include default-button($v-color-primary, 'btn');
         &.is-border {
-            @include button-border-define($v-color-primary, 'primary');
+            @include border-button($v-color-primary, 'primary');
         }
     }
     &.v-btn-success {
-        @include button-define($v-color-success, 'btn');
+        @include default-button($v-color-success, 'btn');
         &.is-border {
-            @include button-border-define($v-color-success, 'success');
+            @include border-button($v-color-success, 'success');
         }
     }
     &.v-btn-warning {
-        @include button-define($v-color-warning, 'btn');
+        @include default-button($v-color-warning, 'btn');
         &.is-border {
-            @include button-border-define($v-color-warning, 'warning');
+            @include border-button($v-color-warning, 'warning');
         }
     }
     &.v-btn-danger {
-        @include button-define($v-color-danger, 'btn');
+        @include default-button($v-color-danger, 'btn');
         &.is-border {
-            @include button-border-define($v-color-danger, 'danger');
+            @include border-button($v-color-danger, 'danger');
         }
     }
     &.v-btn-grey {
-        @include button-define($v-color-grey, 'btn');
+        @include default-button($v-color-grey, 'btn');
         &.is-border {
-            @include button-border-define($v-color-grey, 'grey');
+            @include border-button($v-color-grey, 'grey');
         }
     }
 
