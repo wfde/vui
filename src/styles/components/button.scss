@@ -1,25 +1,25 @@
-$defaultColor: #666;
+$v-default-color: #666;
 
 // 基本按钮
-@mixin button-define($background,$type) {
-    background: $background;
-    border:1px solid $background;
+@mixin button-define($color,$type) {
+    background: $color;
+    border:1px solid $color;
     @if $type == 'btn' {
         color:#fff;
         &:hover {
-            background: darken($background, 5%);
+            background: darken($color, 5%);
         }
     }
 }
 
 // 边框按钮
-@mixin button-border-define($background,$type) {
+@mixin button-border-define($color,$type) {
     background: none;
-    color: $background;
-    border: 1px solid $background;
+    color: $color;
+    border: 1px solid $color;
     &:hover {
-        color:#fff;
-        background: darken($background, 2%);
+        color:$color;
+        background: rgba($color,0.1);
         @if $type == 'default' {
             color:#666;
         }
@@ -32,7 +32,7 @@ $defaultColor: #666;
     font-size: $v-font-size-default;
     line-height: 20px;
     background: $v-color-default;
-    color: $defaultColor;
+    color: $v-default-color;
     white-space: nowrap;
     border-radius: 3px;
     border: none;
