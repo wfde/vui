@@ -1,9 +1,9 @@
 <template>
 
     <button
-            class="btn"
+            class="v-btn"
             :class="[
-                type ? 'btn-' +type : '',
+                type ? 'v-btn-' +type : '',
                 border ? 'is-border' : ''
             ]"
     >
