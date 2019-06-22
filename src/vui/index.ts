@@ -1,6 +1,6 @@
-import Button from '@/components/button';
-import Toast from '@/components/toast';
-import Switch from '@/components/switch';
+import Button from './components/button';
+import Toast from './components/toast';
+import Switch from './components/switch';
 // import Loader from '@/components/loader';
 
 // 定义返回值类型
