@@ -1,7 +1,7 @@
-import Button from '@/components/button';
-import Toast from '@/components/toast';
-import Switch from '@/components/switch';
-import Input from '@/components/input';
+import Input from './components/input';
+import Button from './components/button';
+import Toast from './components/toast';
+import Switch from './components/switch';
 // import Loader from '@/components/loader';
 
 // 定义返回值类型
