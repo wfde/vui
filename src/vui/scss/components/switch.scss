@@ -1,0 +1,64 @@
+// switch组件
+.v-switch {
+  position: relative;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  transition: all .2s ease;
+  background-color: $v-color-default;
+}
+
+//switch size
+.v-switch--small {
+  width: 45px;
+  height: 25px;
+}
+
+.v-switch--middle {
+  width: 60px;
+  height: 30px;
+}
+
+.v-switch--large {
+  width: 75px;
+  height: 35px;
+}
+
+
+.v-switch::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all .2s ease;
+}
+
+//switch checked status style
+.v-switch:checked {
+  background-color: $v-color-primary;
+}
+
+.v-switch-bgcolor--primary:checked {
+  background-color: $v-color-primary;
+}
+
+.v-switch-bgcolor--success:checked {
+  background-color: $v-color-success;
+}
+
+.v-switch-bgcolor--warning:checked {
+  background-color: $v-color-warning;
+}
+
+.v-switch-bgcolor--danger:checked {
+  background-color: $v-color-danger;
+}
+
+.v-switch:checked::after {
+  left: 50%;
+}

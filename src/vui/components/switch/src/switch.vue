@@ -1,54 +1,63 @@
 <template>
-    <section class="switch">
-        <input class='switch-component' type='checkbox'/>
-    </section>
+    <input
+            :id="id"
+            ref="switch"
+            :disabled="disabled"
+            :class="setClassName()"
+            v-model="checked"
+            @change="handleChange"
+            type='checkbox'/>
 </template>
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
 
     @Component
     export default class VSwitch extends Vue {
+        checked: boolean = false;
 
         @Prop({
             type: String,
             default: 'default'
         })
         type: string | undefined;
-    }
 
+        @Prop({
+            type: String,
+            default: 'default'
+        })
+        id: string | undefined;
+
+        // 是否禁用
+        @Prop({
+            type: Boolean,
+            default: false
+        })
+        disabled: boolean | undefined;
+
+        // 是否禁用
+        @Prop({
+            type: String,
+            default: 'middle'
+        })
+        size: string | undefined;
+
+        // 切换switch高亮颜色
+        @Prop({
+            type: String,
+            default: ''
+        })
+        bgcolor: string | undefined;
+
+        // 设置类名字
+        setClassName() {
+            return this.bgcolor
+                ? `v-switch v-switch--${this.size} v-switch-bgcolor--${this.bgcolor}`
+                : `v-switch v-switch--${this.size}`;
+        }
+
+        // 处理切换switch状态
+        handleChange() {
+            this.$emit('change', this.checked);
+        }
+    }
 </script>
-<style lang="scss" scoped>
-    // switch组件
-    .switch-component {
-        position: relative;
-        width: 60px;
-        height: 30px;
-        background-color: #dadada;
-        border-radius: 30px;
-        border: none;
-        outline: none;
-        -webkit-appearance: none;
-        transition: all .2s ease;
-    }
-
-    // 按钮
-    .switch-component::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 50%;
-        height: 100%;
-        background-color: #fff;
-        border-radius: 50%;
-        transition: all .2s ease;
-    }
-
-    .switch-component:checked {
-        background-color: green;
-    }
-
-    .switch-component:checked::after {
-        left: 50%;
-    }
-</style>
