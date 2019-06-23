@@ -2,6 +2,7 @@
     <section>
         <div class="item">
             <v-switch @change="change" :disabled="false" :size="'small'"></v-switch>
+            <v-switch @change="change" :bgcolor="'primary'" :disabled="false" :size="'small'"></v-switch>
             <v-switch @change="change" :bgcolor="'success'" :disabled="false" :size="'small'"></v-switch>
             <v-switch @change="change" :bgcolor="'warning'" :disabled="false" :size="'small'"></v-switch>
             <v-switch @change="change" :bgcolor="'danger'" :disabled="false" :size="'small'"></v-switch>
@@ -10,14 +11,15 @@
 
         <div class="item">
             <v-switch @change="change" :disabled="false"></v-switch>
+            <v-switch @change="change" :bgcolor="'primary'" :disabled="false"></v-switch>
             <v-switch @change="change" :bgcolor="'success'" :disabled="false"></v-switch>
             <v-switch @change="change" :bgcolor="'warning'" :disabled="false"></v-switch>
-            <v-switch @change="change" :bgcolor="'danger'" :disabled="false"></v-switch>
             <v-switch @change="change" :bgcolor="'danger'" :disabled="true"></v-switch>
         </div>
 
         <div class="item">
             <v-switch @change="change" :size="'large'"></v-switch>
+            <v-switch @change="change" :bgcolor="'primary'" :size="'large'"></v-switch>
             <v-switch @change="change" :bgcolor="'success'" :size="'large'"></v-switch>
             <v-switch @change="change" :bgcolor="'warning'" :size="'large'"></v-switch>
             <v-switch @change="change" :bgcolor="'danger'" :size="'large'"></v-switch>
