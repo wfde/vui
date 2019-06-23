@@ -1,7 +1,7 @@
 <template>
     <input
-            :id="id"
             ref="switch"
+            :id="id"
             :disabled="disabled"
             :class="setClassName()"
             v-model="checked"
@@ -14,12 +14,6 @@
     @Component
     export default class VSwitch extends Vue {
         checked: boolean = false;
-
-        @Prop({
-            type: String,
-            default: 'default'
-        })
-        type: string | undefined;
 
         @Prop({
             type: String,
