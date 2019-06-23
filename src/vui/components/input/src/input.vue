@@ -1,9 +1,15 @@
 <template>
-    <div class="v-input">
+    <div :class="{
+        'v-input': true,
+        'clearable': clearable === true
+    }">
         <input class="v-input-inner"
-            :type="type"
-            :placeholder="placeholder"
-            :disabled="disabled">
+               :type="type"
+               :placeholder="placeholder"
+               :disabled="disabled"
+               v-model="value"
+               @input="inputHandle">
+        <span v-if="clearable" class="v-input-clearable" @click="clearInputValue"></span>
     </div>
 </template>
 
@@ -30,6 +36,25 @@
             default: false
         })
         disabled!: boolean;
+
+        @Prop({
+            type: Boolean,
+            default: false
+        })
+        clearable!: boolean;
+
+        inputHandle(event: any){
+            this.$emit('input', event.target.value);
+        }
+
+        // 清除value
+        clearInputValue() {
+            this.value = '';
+            this.$emit('input', '');
+        }
+
+        value: string | number = '';
+
     }
 
 </script>
@@ -62,6 +87,42 @@
                 background: #f5f5f5;
                 cursor: not-allowed;
             }
+        }
+        .v-input-clearable{
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            &:hover{
+                &::after,&::before{
+                    background: #000;
+                }
+            }
+            &::after,&::before{
+                content: '';
+                display: block;
+                background: #ccc;
+                width: 1px;
+                height: 10px;
+                position: absolute;
+                top: 1px;
+                left: 8px;
+            }
+            &::after{
+                transform: rotate(45deg);
+            }
+            &::before{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .clearable{
+        .v-input-inner{
+            padding-right: 24px;
         }
     }
 </style>
