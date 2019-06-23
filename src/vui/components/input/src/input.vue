@@ -1,7 +1,9 @@
 <template>
     <div class="v-input">
-        <input class="v-input-inner" :type="type" :placeholder="placeholder">
-
+        <input class="v-input-inner"
+            :type="type"
+            :placeholder="placeholder"
+            :disabled="disabled">
     </div>
 </template>
 
@@ -22,6 +24,12 @@
             default: '请输入内容'
         })
         placeholder: string | undefined;
+
+        @Prop({
+            type: Boolean,
+            default: false
+        })
+        disabled!: boolean;
     }
 
 </script>
@@ -49,6 +57,10 @@
             &:focus{
                 outline: none;
                 border-color: #409eff;
+            }
+            &:disabled{
+                background: #f5f5f5;
+                cursor: not-allowed;
             }
         }
     }
