@@ -17,7 +17,7 @@
         </div>
 
         <div class="item">
-            <v-switch @change="change" :bgcolor="'danger'" :size="'large'"></v-switch>
+            <v-switch @change="change" :size="'large'"></v-switch>
             <v-switch @change="change" :bgcolor="'success'" :size="'large'"></v-switch>
             <v-switch @change="change" :bgcolor="'warning'" :size="'large'"></v-switch>
             <v-switch @change="change" :bgcolor="'danger'" :size="'large'"></v-switch>
