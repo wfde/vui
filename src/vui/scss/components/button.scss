@@ -1,27 +1,29 @@
-$defaultColor: #666;
-
 // 基本按钮
-@mixin button-define($background,$type) {
-    background: $background;
-    border:1px solid $background;
-    @if $type == 'btn' {
-        color:#fff;
-        &:hover {
-            background: darken($background, 5%);
-        }
+@mixin default-button($color,$type) {
+    background: $color;
+    border: 1px solid $color;
+    @if $type != 'default' {
+        color: #fff;
     }
+    &:hover {
+        background: darken($color, 5%);
+    }
+
 }
 
 // 边框按钮
-@mixin button-border-define($background,$type) {
+@mixin border-button($color,$type) {
+    @if $type != 'default' {
+        color: $color;
+    }
     background: none;
-    color: $background;
-    border: 1px solid $background;
     &:hover {
-        color:#fff;
-        background: darken($background, 2%);
+        background: rgba($color, 0.08);
         @if $type == 'default' {
-            color:#666;
+            color: $v-color-primary;
+            border: 1px solid $v-color-primary;
+        } @else {
+            color: $color;
         }
     }
 }
@@ -32,49 +34,47 @@ $defaultColor: #666;
     font-size: $v-font-size-default;
     line-height: 20px;
     background: $v-color-default;
-    color: $defaultColor;
+    color: #666;
     white-space: nowrap;
     border-radius: 3px;
     border: none;
     outline: none;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    &.v-btn-default{
-        @include button-define($v-color-default, 'btn');
-        color:#666;
+    &-default {
+        @include default-button($v-color-default, 'default');
         &.is-border {
-            @include button-border-define($v-color-default, 'default');
-            color:#666;
+            @include border-button($v-color-default, 'default');
         }
     }
-    &.v-btn-primary {
-        @include button-define($v-color-primary, 'btn');
+    &-primary {
+        @include default-button($v-color-primary, 'primary');
         &.is-border {
-            @include button-border-define($v-color-primary, 'primary');
+            @include border-button($v-color-primary, 'primary');
         }
     }
-    &.v-btn-success {
-        @include button-define($v-color-success, 'btn');
+    &-success {
+        @include default-button($v-color-success, 'success');
         &.is-border {
-            @include button-border-define($v-color-success, 'success');
+            @include border-button($v-color-success, 'success');
         }
     }
-    &.v-btn-warning {
-        @include button-define($v-color-warning, 'btn');
+    &-warning {
+        @include default-button($v-color-warning, 'btn');
         &.is-border {
-            @include button-border-define($v-color-warning, 'warning');
+            @include border-button($v-color-warning, 'warning');
         }
     }
-    &.v-btn-danger {
-        @include button-define($v-color-danger, 'btn');
+    &-danger {
+        @include default-button($v-color-danger, 'danger');
         &.is-border {
-            @include button-border-define($v-color-danger, 'danger');
+            @include border-button($v-color-danger, 'danger');
         }
     }
-    &.v-btn-grey {
-        @include button-define($v-color-grey, 'btn');
+    &-info {
+        @include default-button($v-color-info, 'grey');
         &.is-border {
-            @include button-border-define($v-color-grey, 'grey');
+            @include border-button($v-color-info, 'grey');
         }
     }
 
