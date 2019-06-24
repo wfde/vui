@@ -1,14 +1,14 @@
-
 // 基本按钮
 @mixin default-button($color,$type) {
     background: $color;
-    border:1px solid $color;
-    @if $type == 'btn' {
-        color:#fff;
-        &:hover {
-            background: darken($color, 5%);
-        }
+    border: 1px solid $color;
+    @if $type != 'default' {
+        color: #fff;
     }
+    &:hover {
+        background: darken($color, 5%);
+    }
+
 }
 
 // 边框按钮
@@ -17,10 +17,10 @@
     color: $color;
     border: 1px solid $color;
     &:hover {
-        color:$color;
-        background: rgba($color,0.1);
+        color: $color;
+        background: rgba($color, 0.1);
         @if $type == 'default' {
-            color:#666;
+            color: #666;
         }
     }
 }
@@ -38,22 +38,21 @@
     outline: none;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    &-default{
-        @include default-button($v-color-default, 'btn');
-        color:#666;
+    &-default {
+        @include default-button($v-color-default, 'default');
         &.is-border {
             @include border-button($v-color-default, 'default');
-            color:#666;
+            color: #666;
         }
     }
     &-primary {
-        @include default-button($v-color-primary, 'btn');
+        @include default-button($v-color-primary, 'primary');
         &.is-border {
             @include border-button($v-color-primary, 'primary');
         }
     }
     &-success {
-        @include default-button($v-color-success, 'btn');
+        @include default-button($v-color-success, 'success');
         &.is-border {
             @include border-button($v-color-success, 'success');
         }
@@ -65,13 +64,13 @@
         }
     }
     &-danger {
-        @include default-button($v-color-danger, 'btn');
+        @include default-button($v-color-danger, 'danger');
         &.is-border {
             @include border-button($v-color-danger, 'danger');
         }
     }
     &-grey {
-        @include default-button($v-color-grey, 'btn');
+        @include default-button($v-color-grey, 'grey');
         &.is-border {
             @include border-button($v-color-grey, 'grey');
         }
