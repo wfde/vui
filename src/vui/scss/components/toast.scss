@@ -16,17 +16,17 @@
     font-size: $v-font-size-default;
     &-success {
         color: $v-color-success;
-        background-color: lighten($v-color-success, 40%);
+        background-color: lighten($v-color-success, 45%);
         border: 1px solid lighten($v-color-success, 30%);
     }
     &-error {
         color: $v-color-danger;
-        background-color: lighten($v-color-danger, 25%);
+        background-color: lighten($v-color-danger, 28%);
         border: 1px solid lighten($v-color-danger, 20%);
     }
     &-warning {
         color: $v-color-warning;
-        background-color: lighten($v-color-warning, 35%);
+        background-color: lighten($v-color-warning, 36%);
         border: 1px solid lighten($v-color-warning, 30%);
     }
     &-top {
