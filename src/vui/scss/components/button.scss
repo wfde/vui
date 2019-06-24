@@ -70,12 +70,11 @@
             @include border-button($v-color-danger, 'danger');
         }
     }
-    &-grey {
-        @include default-button($v-color-grey, 'grey');
+    &-info {
+        @include default-button($v-color-info, 'grey');
         &.is-border {
-            @include border-button($v-color-grey, 'grey');
+            @include border-button($v-color-info, 'grey');
         }
     }
-
 }
 

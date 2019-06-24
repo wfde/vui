@@ -8,7 +8,7 @@
             <v-button type="success">成功</v-button>
             <v-button type="warning">警告</v-button>
             <v-button type="danger">危险</v-button>
-            <v-button type="grey">信息</v-button>
+            <v-button type="info">信息</v-button>
         </div>
 
         <div class="btns">
@@ -17,7 +17,7 @@
             <v-button type="success" border>成功</v-button>
             <v-button type="warning" border>警告</v-button>
             <v-button type="danger" border>危险</v-button>
-            <v-button type="grey" border>信息</v-button>
+            <v-button type="info" border>信息</v-button>
         </div>
 
     </div>
