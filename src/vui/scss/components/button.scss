@@ -8,19 +8,21 @@
     &:hover {
         background: darken($color, 5%);
     }
-
 }
 
 // 边框按钮
 @mixin border-button($color,$type) {
-    background: none;
-    color: $color;
-    border: 1px solid $color;
-    &:hover {
+    @if $type != 'default' {
         color: $color;
-        background: rgba($color, 0.1);
+    }
+    background: none;
+    &:hover {
+        background: rgba($color, 0.08);
         @if $type == 'default' {
-            color: #666;
+            color: $v-color-primary;
+            border: 1px solid $v-color-primary;
+        } @else {
+            color: $color;
         }
     }
 }
@@ -42,7 +44,6 @@
         @include default-button($v-color-default, 'default');
         &.is-border {
             @include border-button($v-color-default, 'default');
-            color: #666;
         }
     }
     &-primary {
