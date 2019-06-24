@@ -39,7 +39,7 @@ $v-default-color: #666;
     outline: none;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    &.v-btn-default{
+    &-default{
         @include default-button($v-color-default, 'btn');
         color:#666;
         &.is-border {
@@ -47,31 +47,31 @@ $v-default-color: #666;
             color:#666;
         }
     }
-    &.v-btn-primary {
+    &-primary {
         @include default-button($v-color-primary, 'btn');
         &.is-border {
             @include border-button($v-color-primary, 'primary');
         }
     }
-    &.v-btn-success {
+    &-success {
         @include default-button($v-color-success, 'btn');
         &.is-border {
             @include border-button($v-color-success, 'success');
         }
     }
-    &.v-btn-warning {
+    &-warning {
         @include default-button($v-color-warning, 'btn');
         &.is-border {
             @include border-button($v-color-warning, 'warning');
         }
     }
-    &.v-btn-danger {
+    &-danger {
         @include default-button($v-color-danger, 'btn');
         &.is-border {
             @include border-button($v-color-danger, 'danger');
         }
     }
-    &.v-btn-grey {
+    &-grey {
         @include default-button($v-color-grey, 'btn');
         &.is-border {
             @include border-button($v-color-grey, 'grey');
