@@ -1,4 +1,3 @@
-$v-default-color: #666;
 
 // 基本按钮
 @mixin default-button($color,$type) {
@@ -32,7 +31,7 @@ $v-default-color: #666;
     font-size: $v-font-size-default;
     line-height: 20px;
     background: $v-color-default;
-    color: $v-default-color;
+    color: #666;
     white-space: nowrap;
     border-radius: 3px;
     border: none;
