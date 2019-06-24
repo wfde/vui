@@ -30,6 +30,12 @@ export default new Router({
             name: 'switch',
             component: () => import('@/views/components/switch.vue'),
             meta: {title: '开关'}
+        },
+        {
+            path: '/input',
+            name: 'input',
+            component: () => import('@/views/components/input.vue'),
+            meta: {title: '输入框'}
         }
     ]
 });
