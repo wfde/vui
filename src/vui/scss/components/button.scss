@@ -29,7 +29,7 @@
 
 // 禁止基本按钮
 @mixin disabled-button($color) {
-    opacity:.7;
+    opacity:.5;
     &:hover {
         background: $color;
         border: 1px solid $color;
@@ -37,9 +37,9 @@
     }
 }
 
-// 禁止变量按钮
+// 禁止边框按钮
 @mixin disabled-border-button($color,$type) {
-    opacity:.7;
+    opacity:.5;
     &:hover {
         @if $type == 'default' {
             color: #666;
