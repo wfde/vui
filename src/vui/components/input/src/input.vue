@@ -8,6 +8,7 @@
                :type="type"
                :placeholder="placeholder"
                :disabled="disabled"
+               :maxlength="maxLength"
                v-model="value"
                @input="inputHandle">
         <textarea class="v-input-inner textarea-inner"
@@ -60,6 +61,12 @@
             default: 0
         })
         rows: number | undefined;
+        // 最大输入限制
+        @Prop({
+            type: Number,
+            default: -1
+        })
+        maxLength: number | undefined;
 
         inputHandle(event: any){
             this.$emit('input', event.target.value);
