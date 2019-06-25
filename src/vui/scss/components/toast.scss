@@ -1,25 +1,41 @@
 .v-toast {
     position: fixed;
-    padding: 10px;
+    padding: 15px;
     left: 50%;
     z-index: 99999;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    min-width: 160px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
     -webkit-transition: opacity .3s linear;
     transition: opacity .3s linear;
-    border-radius: 5px;
-    background: rgba(0, 0, 0, .7);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .7);
     color: #fff;
     box-sizing: border-box;
     text-align: center;
-    font-size: 14px;
-    &.v-toast-top {
-        top: 10%;
+    font-size: $v-font-size-default;
+    &-success {
+        color: $v-color-success;
+        background-color: lighten($v-color-success, 45%);
+        border: 1px solid lighten($v-color-success, 30%);
     }
-    &.v-toast-middle {
-        top: 50%;
+    &-error {
+        color: $v-color-danger;
+        background-color: lighten($v-color-danger, 28%);
+        border: 1px solid lighten($v-color-danger, 20%);
     }
-    &.v-toast-bottom {
+    &-warning {
+        color: $v-color-warning;
+        background-color: lighten($v-color-warning, 36%);
+        border: 1px solid lighten($v-color-warning, 30%);
+    }
+    &-top {
+        top: 5%;
+    }
+    &-middle {
+        top: 40%;
+    }
+    &-bottom {
         top: initial;
         bottom: 5%;
     }

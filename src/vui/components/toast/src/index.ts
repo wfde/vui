@@ -7,6 +7,7 @@ const ToastInstance = Vue.extend(toast);
 interface ToastOption {
     message: string;
     position?: string;
+    type?: string;
     duration?: number;
 }
 
