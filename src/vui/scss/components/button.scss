@@ -10,15 +10,6 @@
     }
 }
 
-// 禁止基本按钮
-@mixin disabled-button($color) {
-    &:hover {
-        background: $color;
-        border: 1px solid $color;
-        cursor: not-allowed;
-    }
-}
-
 // 边框按钮
 @mixin border-button($color,$type) {
     @if $type != 'default' {
@@ -37,6 +28,15 @@
 }
 
 // 禁止基本按钮
+@mixin disabled-button($color) {
+    &:hover {
+        background: $color;
+        border: 1px solid $color;
+        cursor: not-allowed;
+    }
+}
+
+// 禁止变量按钮
 @mixin disabled-border-button($color,$type) {
     &:hover {
         @if $type == 'default' {
