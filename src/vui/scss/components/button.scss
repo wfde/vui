@@ -10,6 +10,15 @@
     }
 }
 
+// 禁止基本按钮
+@mixin disabled-button($color) {
+    &:hover {
+        background: $color;
+        border: 1px solid $color;
+        cursor: not-allowed;
+    }
+}
+
 // 边框按钮
 @mixin border-button($color,$type) {
     @if $type != 'default' {
@@ -24,6 +33,19 @@
         } @else {
             color: $color;
         }
+    }
+}
+
+// 禁止基本按钮
+@mixin disabled-border-button($color,$type) {
+    &:hover {
+        @if $type == 'default' {
+            color: #666;
+        } @else {
+            color: $color;
+        }
+        background: none;
+        border: 1px solid $color;
     }
 }
 
@@ -44,37 +66,74 @@
         @include default-button($v-color-default, 'default');
         &.is-border {
             @include border-button($v-color-default, 'default');
+            &.disabled {
+                @include disabled-border-button($v-color-default, 'default');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-default);
         }
     }
     &-primary {
         @include default-button($v-color-primary, 'primary');
         &.is-border {
             @include border-button($v-color-primary, 'primary');
+            &.disabled {
+                @include disabled-border-button($v-color-primary, 'primary');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-primary);
         }
     }
     &-success {
         @include default-button($v-color-success, 'success');
         &.is-border {
             @include border-button($v-color-success, 'success');
+            &.disabled {
+                @include disabled-border-button($v-color-success, 'success');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-success);
         }
     }
     &-warning {
         @include default-button($v-color-warning, 'btn');
         &.is-border {
             @include border-button($v-color-warning, 'warning');
+            &.disabled {
+                @include disabled-border-button($v-color-warning, 'warning');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-warning);
         }
     }
     &-danger {
         @include default-button($v-color-danger, 'danger');
         &.is-border {
             @include border-button($v-color-danger, 'danger');
+            &.disabled {
+                @include disabled-border-button($v-color-danger, 'danger');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-danger);
         }
     }
     &-info {
-        @include default-button($v-color-info, 'grey');
+        @include default-button($v-color-info, 'info');
         &.is-border {
-            @include border-button($v-color-info, 'grey');
+            @include border-button($v-color-info, 'info');
+            &.disabled {
+                @include disabled-border-button($v-color-info, 'info');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-info);
         }
     }
+
 }
 

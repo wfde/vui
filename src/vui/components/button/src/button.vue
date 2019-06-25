@@ -4,7 +4,8 @@
             class="v-btn"
             :class="[
                 type ? 'v-btn-' +type : '',
-                border ? 'is-border' : ''
+                border ? 'is-border' : '',
+                disabled ? 'disabled' : ''
             ]"
     >
         <slot></slot>
@@ -29,6 +30,12 @@
             default: false
         })
         border: boolean | undefined;
+
+        @Prop({
+            type: Boolean,
+            default: false
+        })
+        disabled: boolean | undefined;
 
     }
 
