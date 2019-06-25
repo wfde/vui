@@ -1,15 +1,21 @@
 <template>
     <div :class="{
         'v-input': true,
-        'clearable': clearable === true && value
+        'clearable': showClearable()
     }">
         <input class="v-input-inner"
+               v-if="type !== 'textarea'"
                :type="type"
                :placeholder="placeholder"
                :disabled="disabled"
                v-model="value"
                @input="inputHandle">
-        <span v-if="clearable && value" class="v-input-clearable" @click="clearInputValue"></span>
+        <textarea class="v-input-inner textarea-inner"
+                  v-if="type === 'textarea'"
+                  v-model="value"
+                  :placeholder="placeholder"
+                  :cols="cols" :rows="rows"></textarea>
+        <span v-if="showClearable()" class="v-input-clearable" @click="clearInputValue"></span>
     </div>
 </template>
 
@@ -42,9 +48,25 @@
             default: false
         })
         clearable!: boolean;
+        // textarea 默认列
+        @Prop({
+            type: Number,
+            default: 0
+        })
+        cols: number | undefined;
+        // textarea 默认行
+        @Prop({
+            type: Number,
+            default: 0
+        })
+        rows: number | undefined;
 
         inputHandle(event: any){
             this.$emit('input', event.target.value);
+        }
+
+        showClearable() {
+            return this.clearable && this.value && this.type !== 'textarea';
         }
 
         // 清除value
