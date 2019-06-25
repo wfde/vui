@@ -1,28 +1,51 @@
-$v-default-color: #666;
-
 // 基本按钮
 @mixin default-button($color,$type) {
     background: $color;
-    border:1px solid $color;
-    @if $type == 'btn' {
-        color:#fff;
-        &:hover {
-            background: darken($color, 5%);
-        }
+    border: 1px solid $color;
+    @if $type != 'default' {
+        color: #fff;
+    }
+    &:hover {
+        background: darken($color, 5%);
     }
 }
 
 // 边框按钮
 @mixin border-button($color,$type) {
+    @if $type != 'default' {
+        color: $color;
+    }
     background: none;
-    color: $color;
-    border: 1px solid $color;
     &:hover {
-        color:$color;
-        background: rgba($color,0.1);
+        background: rgba($color, 0.08);
         @if $type == 'default' {
-            color:#666;
+            color: $v-color-primary;
+            border: 1px solid $v-color-primary;
+        } @else {
+            color: $color;
         }
+    }
+}
+
+// 禁止基本按钮
+@mixin disabled-button($color) {
+    &:hover {
+        background: $color;
+        border: 1px solid $color;
+        cursor: not-allowed;
+    }
+}
+
+// 禁止变量按钮
+@mixin disabled-border-button($color,$type) {
+    &:hover {
+        @if $type == 'default' {
+            color: #666;
+        } @else {
+            color: $color;
+        }
+        background: none;
+        border: 1px solid $color;
     }
 }
 
@@ -32,49 +55,83 @@ $v-default-color: #666;
     font-size: $v-font-size-default;
     line-height: 20px;
     background: $v-color-default;
-    color: $v-default-color;
+    color: #666;
     white-space: nowrap;
     border-radius: 3px;
     border: none;
     outline: none;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    &.v-btn-default{
-        @include default-button($v-color-default, 'btn');
-        color:#666;
+    &-default {
+        @include default-button($v-color-default, 'default');
         &.is-border {
             @include border-button($v-color-default, 'default');
-            color:#666;
+            &.disabled {
+                @include disabled-border-button($v-color-default, 'default');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-default);
         }
     }
-    &.v-btn-primary {
-        @include default-button($v-color-primary, 'btn');
+    &-primary {
+        @include default-button($v-color-primary, 'primary');
         &.is-border {
             @include border-button($v-color-primary, 'primary');
+            &.disabled {
+                @include disabled-border-button($v-color-primary, 'primary');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-primary);
         }
     }
-    &.v-btn-success {
-        @include default-button($v-color-success, 'btn');
+    &-success {
+        @include default-button($v-color-success, 'success');
         &.is-border {
             @include border-button($v-color-success, 'success');
+            &.disabled {
+                @include disabled-border-button($v-color-success, 'success');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-success);
         }
     }
-    &.v-btn-warning {
+    &-warning {
         @include default-button($v-color-warning, 'btn');
         &.is-border {
             @include border-button($v-color-warning, 'warning');
+            &.disabled {
+                @include disabled-border-button($v-color-warning, 'warning');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-warning);
         }
     }
-    &.v-btn-danger {
-        @include default-button($v-color-danger, 'btn');
+    &-danger {
+        @include default-button($v-color-danger, 'danger');
         &.is-border {
             @include border-button($v-color-danger, 'danger');
+            &.disabled {
+                @include disabled-border-button($v-color-danger, 'danger');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-danger);
         }
     }
-    &.v-btn-grey {
-        @include default-button($v-color-grey, 'btn');
+    &-info {
+        @include default-button($v-color-info, 'info');
         &.is-border {
-            @include border-button($v-color-grey, 'grey');
+            @include border-button($v-color-info, 'info');
+            &.disabled {
+                @include disabled-border-button($v-color-info, 'info');
+            }
+        }
+        &.disabled {
+            @include disabled-button($v-color-info);
         }
     }
 

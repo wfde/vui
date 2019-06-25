@@ -19,7 +19,8 @@
     export default class Toast extends Vue {
         message: string = '';
         position: string = 'middle';
-        duration: number = 3000;
+        type: string = 'info';
+        duration: number = 1500;
         visible: boolean = true;
         closed: any;
         timer: any;
@@ -50,6 +51,9 @@
         // 自定义class
         get customClass() {
             const classes = [];
+            if (this.type) {
+                classes.push('v-toast-' + this.type);
+            }
             if (this.position) {
                 classes.push('v-toast-' + this.position);
             }

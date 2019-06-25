@@ -8,7 +8,7 @@
             <v-button type="success">成功</v-button>
             <v-button type="warning">警告</v-button>
             <v-button type="danger">危险</v-button>
-            <v-button type="grey">信息</v-button>
+            <v-button type="info">信息</v-button>
         </div>
 
         <div class="btns">
@@ -17,8 +17,28 @@
             <v-button type="success" border>成功</v-button>
             <v-button type="warning" border>警告</v-button>
             <v-button type="danger" border>危险</v-button>
-            <v-button type="grey" border>信息</v-button>
+            <v-button type="info" border>信息</v-button>
         </div>
+
+        <div class="btns">
+            <v-button disabled>默认</v-button>
+            <v-button type="primary" disabled>主要</v-button>
+            <v-button type="success" disabled>成功</v-button>
+            <v-button type="warning" disabled>警告</v-button>
+            <v-button type="danger" disabled>危险</v-button>
+            <v-button type="info" disabled>信息</v-button>
+        </div>
+
+        <div class="btns">
+            <v-button border disabled>默认</v-button>
+            <v-button type="primary" border disabled>主要</v-button>
+            <v-button type="success" border disabled>成功</v-button>
+            <v-button type="warning" border disabled>警告</v-button>
+            <v-button type="danger" border disabled>危险</v-button>
+            <v-button type="info" border disabled>信息</v-button>
+        </div>
+
+
 
     </div>
 </template>
