@@ -10,7 +10,9 @@ interface LoadingOption {
 }
 
 let instance: any;
-const Loading = (options: LoadingOption): void => {
+let instanceArr: any = [];
+const Loading = (options: LoadingOption): object => {
+    Loading.hide();
     instance = new LoadingInstance({
         data: options
     });
@@ -19,14 +21,18 @@ const Loading = (options: LoadingOption): void => {
         Loading.hide();
     };
     instance.$mount();
+    instanceArr.push(instance);
     document.body.appendChild(instance.$el);
     return instance;
 };
 
 // 隐藏loading
 Loading.hide = () => {
-    instance.visible = false;
-    document.body.removeChild(instance.$el);
+    for (let item of instanceArr) {
+        item.visible = false;
+        document.body.removeChild(item.$el);
+    }
+    instanceArr = [];
 };
 
 export default Loading;
