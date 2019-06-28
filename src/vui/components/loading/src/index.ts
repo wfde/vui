@@ -9,8 +9,16 @@ interface LoadingOption {
     background?: string;
 }
 
+// 定义Instance类型
+interface InstanceOption {
+    // data: LoadingOption;
+    visible: boolean;
+    hide(): void;
+    [propName: string]: any;
+}
+
 let instance: any;
-let instanceArr: any = [];
+let instanceArr: InstanceOption[] = [];
 const Loading = (options: LoadingOption): object => {
     Loading.hide();
     instance = new LoadingInstance({
