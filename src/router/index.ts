@@ -36,6 +36,12 @@ export default new Router({
             name: 'input',
             component: () => import('@/views/components/input.vue'),
             meta: {title: '输入框'}
+        },
+        {
+            path: '/loading',
+            name: 'loading',
+            component: () => import('@/views/components/loading.vue'),
+            meta: {title: '加载'}
         }
     ]
 });

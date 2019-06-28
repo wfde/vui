@@ -2,7 +2,7 @@ import Button from './components/button';
 import Toast from './components/toast';
 import Switch from './components/switch';
 import Input from './components/input';
-// import Loader from '@/components/loader';
+import Loading from './components/loading';
 
 // 定义返回值类型
 const install = (Vue: any) => {
@@ -11,6 +11,7 @@ const install = (Vue: any) => {
     Vue.component(Switch.name, Switch);
     Vue.component(Input.name, Input);
     Vue.prototype.$toast = Toast;
+    Vue.prototype.$loading = Loading;
 
 };
 
