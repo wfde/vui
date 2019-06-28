@@ -15,23 +15,23 @@
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
 
-    let aaa: any;
+    let loading: any;
     @Component
     export default class Loading extends Vue {
 
 
         openLoading(tit: string) {
-            aaa = this.$loading({
+            loading = this.$loading({
                 title: tit
             });
 
-//            setTimeout(() => {
-//                loading.hide();
-//            }, 3000);
+            setTimeout(() => {
+                loading.hide();
+            }, 3000);
         }
 
         hideLoading(){
-            aaa.hide();
+            loading.hide();
         }
 
     }

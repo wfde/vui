@@ -26,19 +26,6 @@
         title: string = '';
         visible: boolean = true;
         background: string = '';
-
-        // 自定义class
-//        get customClass() {
-//            const classes = [];
-//            if (this.type) {
-//                classes.push('v-toast-' + this.type);
-//            }
-//            if (this.position) {
-//                classes.push('v-toast-' + this.position);
-//            }
-//            return classes.join(' ');
-//        }
-
     }
 
 </script>
