@@ -11,7 +11,6 @@ interface LoadingOption {
 
 // 定义Instance类型
 interface InstanceOption {
-    // data: LoadingOption;
     visible: boolean;
     hide(): void;
     [propName: string]: any;
@@ -19,7 +18,7 @@ interface InstanceOption {
 
 let instance: any;
 let instanceArr: InstanceOption[] = [];
-const Loading = (options: LoadingOption): object => {
+const Loading = (options: LoadingOption): InstanceOption => {
     Loading.hide();
     instance = new LoadingInstance({
         data: options
