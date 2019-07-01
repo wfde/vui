@@ -11,9 +11,11 @@ interface LoadingOption {
 
 // 定义Instance类型
 interface InstanceOption {
-    visible: boolean;
-    hide(): void;
-    [propName: string]: any;
+    visible: boolean,
+
+    hide(): void,
+
+    [propName: string]: any
 }
 
 let instance: any;
