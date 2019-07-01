@@ -20,6 +20,12 @@ export default new Router({
             meta: {title: '按钮'}
         },
         {
+            path: '/label',
+            name: 'label',
+            component: () => import('@/views/components/label.vue'),
+            meta: {title: '标签'}
+        },
+        {
             path: '/toast',
             name: 'toast',
             component: () => import('@/views/components/toast.vue'),

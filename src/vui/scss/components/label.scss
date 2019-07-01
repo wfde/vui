@@ -1,0 +1,52 @@
+@import "../mixins/label.scss";
+
+.v-label {
+    display: inline-block;
+    padding: 6px 20px;
+    font-size: $v-font-size-default;
+    line-height: 20px;
+    background: $v-color-default;
+    color: #666;
+    white-space: nowrap;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    &-default {
+        @include default-button($v-color-default, 'default');
+        &.is-border {
+            @include border-button($v-color-default, 'default');
+        }
+    }
+    &-primary {
+        @include default-button($v-color-primary, 'primary');
+        &.is-border {
+            @include border-button($v-color-primary, 'primary');
+        }
+    }
+    &-success {
+        @include default-button($v-color-success, 'success');
+        &.is-border {
+            @include border-button($v-color-success, 'success');
+        }
+    }
+    &-warning {
+        @include default-button($v-color-warning, 'btn');
+        &.is-border {
+            @include border-button($v-color-warning, 'warning');
+        }
+    }
+    &-danger {
+        @include default-button($v-color-danger, 'danger');
+        &.is-border {
+            @include border-button($v-color-danger, 'danger');
+        }
+    }
+    &-info {
+        @include default-button($v-color-info, 'info');
+        &.is-border {
+            @include border-button($v-color-info, 'info');
+        }
+    }
+}
+

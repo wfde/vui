@@ -1,0 +1,17 @@
+// 基本按钮
+@mixin default-button($color,$type) {
+    background: $color;
+    border: 1px solid $color;
+    @if $type != 'default' {
+        color: #fff;
+    }
+}
+
+// 边框按钮
+@mixin border-button($color,$type) {
+    @if $type != 'default' {
+        color: $color;
+    }
+    background: none;
+}
+

@@ -1,4 +1,5 @@
 import Button from './components/button';
+import Label from './components/label';
 import Toast from './components/toast';
 import Switch from './components/switch';
 import Input from './components/input';
@@ -8,6 +9,7 @@ import Input from './components/input';
 const install = (Vue: any) => {
 
     Vue.component(Button.name, Button);
+    Vue.component(Label.name, Label);
     Vue.component(Switch.name, Switch);
     Vue.component(Input.name, Input);
     Vue.prototype.$toast = Toast;
