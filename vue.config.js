@@ -37,6 +37,17 @@ module.exports = {
     //         title: 'Vui库',
     //         // 提取出来的通用 chunk 和 vendor chunk。
     //         chunks: ['chunk-vendors', 'chunk-common', 'index']
+    //     },
+    //     home: {
+    //         // page 的入口
+    //         entry: 'src/home.ts',
+    //         // 模板来源
+    //         template: 'public/index.html',
+    //         // 在 dist/index.html 的输出
+    //         filename: 'home.html',
+    //         title: '测试',
+    //         // 提取出来的通用 chunk 和 vendor chunk。
+    //         chunks: ['home']
     //     }
     // },
 
